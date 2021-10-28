@@ -6,7 +6,7 @@ function CardList({ deck }) {
     const history = useHistory();
 
     const deleteHandler = (cardId) => {
-        if(window.confirm("Delete this cared?\n\ You will not be able to recover it.")) {
+        if(window.confirm("Delete this cared? \n You will not be able to recover it.")) {
             deleteCard(cardId);
             history.go(0)
         }
@@ -18,21 +18,21 @@ function CardList({ deck }) {
         const cardList = cards.map((card) => {
             return (
                 <div key={card.id} className="row">
-                    <div className="col-sm-5">
+                    <div className="col col-md-6">
                         <div className="card">
                             <div className="card-body">
                                 <p className="card-text">{card.front}</p>
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-5">
+                    <div className="col col-md-6">
                         <div className="card">
                             <div className="card-body">
                                 <p className="card-text">{card.back}</p>
                                 <button
                                     type="button"
                                     onClick={() => history.push(`/decks/${deck.id}/cards/${card.id}/edit`)}
-                                    className="btn btn-seconddary"
+                                    className="btn btn-secondary"
                                 >Edit</button>
                                 <button
                                     type="button"

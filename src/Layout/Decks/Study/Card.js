@@ -34,10 +34,10 @@ function Card({ deck }) {
             <div key = {card.index}>
                 <div className="card">
                     <div className="card-body">
-                        <h5 className="card-title">Card {index+1} of {card.length}</h5>
+                        <h5 className="card-title">Card {index+1} of {cards.length}</h5>
                         <p className="card-text">{flip ? card.front : card.back }</p>
-                        <button onClick = {flipHandler} type="button" className="btn btn-secondary mr-2">Flip</button>
-                        {flip ? null : <button onClick = {nextHandler}>Next</button>}
+                        <button onClick = {flipHandler} type="button" className="btn btn-secondary mr-4">Flip</button>
+                        {flip ? null : <button className="btn btn-primary" onClick = {nextHandler}>Next</button>}
                     </div>
                 </div>
             </div>

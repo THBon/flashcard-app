@@ -13,6 +13,15 @@
         "The name and functions of all the bones inside the human body."
       ],
       "id": 3
+    },
+    {
+      "name": [
+        "Test deck"
+      ],
+      "description": [
+        "This deck is for testing purpose"
+      ],
+      "id": 4
     }
   ],
   "cards": [
@@ -27,6 +36,12 @@
       "back": "Renders the first matching child <Route> ",
       "deckId": 2,
       "id": 5
+    },
+    {
+      "front": "Guess what my name is",
+      "back": "Hi my name is Bon",
+      "deckId": 2,
+      "id": 6
     }
   ]
 }

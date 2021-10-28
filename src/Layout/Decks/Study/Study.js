@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { readDeck } from "../../../utils/api";
 import Card from "./Card";
-import { Route, Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function Study() {
     const [deck, setDeck] = useState({});
@@ -21,7 +21,7 @@ function Study() {
                         </Link>
                     </li>
                     <li className="breadcrumb-item">
-                        <Link Path="/decks/:deckId">{deck.name}</Link>
+                        <Link to=" ">{deck.name}</Link>
                     </li>
                     <li className="breadcrumb-item active">
                         Study

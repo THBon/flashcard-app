@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import { listDecks } from "../../utils/api";
-import { deleteDeck } from "../../utils/api";
+import { listDecks, deleteDeck } from "../../utils/api";
 
-function Home() {
+//The home page of the flashcard-app
+
+function Home() { 
   const [deckList, setDeckList] = useState([]);
   const history = useHistory();
   
@@ -18,7 +19,7 @@ function Home() {
     }
   }
   
-  
+  //Each individual deck on the list
   const table = deckList.map((deck) => {
     return (
       <div key = { deck.id } className="card">
@@ -36,10 +37,11 @@ function Home() {
     );
   });
   
+  //Return the whole list along the Create Deck button
   return (
     <section>
       <Link to="./decks/new" className="btn btn-secondary mb-2">
-        <i className="fa fa-plus-lg"></i>
+        <i className="fa fa-plus-lg" aria-hidden="true"></i>
         Create Deck
       </Link>
       {table}
