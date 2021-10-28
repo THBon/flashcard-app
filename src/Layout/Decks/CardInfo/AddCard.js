@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { readDeck, createCard } from "../../../utils/api";
+import Form from "./Form";
 
 
 function AddCard() {
@@ -11,11 +12,12 @@ function AddCard() {
         back: ""
     })
 
-    //Load deck 
+    //Load deck based on deck's id
     useEffect(() => {
         readDeck(deckId).then(setDeck)
     }, [deckId])
 
+    //Handle values changes
     const changeHandler = ({target}) => {
         setFormData({
             ...formData,
@@ -23,6 +25,7 @@ function AddCard() {
         });
     }
 
+    //Set card values when submited
     const submitHandler = (event) => {
         event.preventDefault();
         createCard(deck.id, formData);
@@ -48,34 +51,7 @@ function AddCard() {
                 </ol>
             </nav>
             <h1>{deck.name}: Add Card</h1>
-            <form className="mb-5" onSubmit={submitHandler}>
-                <div className="mb-4">
-                    <label htmlFor="front" className="form-label font-weight-bold">Front</label>
-                    <textarea
-                        id="front"
-                        name="front"
-                        value= {formData.front}
-                        onChange={changeHandler}
-                        className="form-control"
-                        rows="3"
-                        required
-                    />
-                </div>
-                <div className="mb-4">
-                    <label htmlFor="back" className="form-label font-weight-bold">Back</label>
-                    <textarea
-                        id="back"
-                        name="back"
-                        value= {formData.back}
-                        onChange={changeHandler}
-                        className="form-control"
-                        rows="3"
-                        required
-                    />
-                </div>
-                <Link to={`/decks/${deck.id}`} className="btn btn-secondary btn-lg mr-3">Done</Link>
-                <button type="submit" className="btn btn-primary btn-lg">Save</button>
-            </form>
+            <Form changeHandler = { changeHandler } submitHandler = { submitHandler } deck = { deck } formData = { formData } />
         </div>
     )
 }

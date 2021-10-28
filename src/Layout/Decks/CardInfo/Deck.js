@@ -11,7 +11,7 @@ function Deck() {
   const history = useHistory();
   const { url } = useRouteMatch();
 
-
+  //Load deck based on deck's id
   useEffect(() => {
     readDeck(deckId).then(setDeck);
   }, [deckId]);
@@ -24,6 +24,8 @@ function Deck() {
     }
   }
 
+
+  //Layout to do: icons not working properly
   return (
     <div>
       <nav aria-label="breadcrumb">

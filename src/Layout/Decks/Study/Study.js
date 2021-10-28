@@ -7,6 +7,7 @@ function Study() {
     const [deck, setDeck] = useState({});
     const {deckId } = useParams();
 
+    //Load deck based on ID of the deck
     useEffect(() => {
         readDeck(deckId).then(setDeck)
     },[deckId])

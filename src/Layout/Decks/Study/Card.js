@@ -28,7 +28,7 @@ function Card({ deck }) {
             }
         }
     }
-
+    //Map out each card within a deck with its own individual index
     const card = cards.map((card, index) => {
         return (
             <div key = {card.index}>
@@ -44,6 +44,7 @@ function Card({ deck }) {
         );
     })
 
+    //If the length of deck is less than 3, reject "study" and return not enough cards message.
     if(cards.length < 3) {
         return (
             <div>
@@ -53,6 +54,7 @@ function Card({ deck }) {
         )
     }
 
+    //Else return the card function 
     return (
         <div>
             {card[nextCard]}

@@ -10,6 +10,8 @@ import EditDeck from "./Decks/CardInfo/EditDeck";
 import EditCard from "./Decks/CardInfo/EditCard";
 import AddCard from "./Decks/CardInfo/AddCard";
 
+
+//The central area for all navigations throughout the app
 function Layout() {
   return (
     <React.Fragment>

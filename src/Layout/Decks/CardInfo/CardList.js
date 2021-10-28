@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { deleteCard } from "../../../utils/api";
 
+
 function CardList({ deck }) {
     const history = useHistory();
 
@@ -11,7 +12,10 @@ function CardList({ deck }) {
             history.go(0)
         }
     }
-
+    
+    /*If there are cards inside the deck,
+    map them out with requested layout.
+    To do: optimize the layout between back/front*/ 
     if(deck.cards && deck.cards.length > 0) {
         const { cards } = deck;
 

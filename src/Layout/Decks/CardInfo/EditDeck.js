@@ -5,6 +5,8 @@ import { readDeck, updateDeck } from "../../../utils/api";
 function EditDeck() {
     const history = useHistory();
     const [deck, setDeck] = useState({});
+    
+    //Define the value of the deck
     const [formData, setFormData] = useState({
         name: "",
         description: ""
@@ -34,6 +36,7 @@ function EditDeck() {
             [target.name]: target.value
         });
     }
+
 
     const submitHandler = (event) => {
         event.preventDefault();
